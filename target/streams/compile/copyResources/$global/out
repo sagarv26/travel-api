@@ -1,4 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/sagar/JavaWorkspace/TravelAPI/conf/db.conf,/Users/sagar/JavaWorkspace/TravelAPI/target/scala-2.10/classes/db.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/sagar/JavaWorkspace/TravelAPI/conf/application.conf,/Users/sagar/JavaWorkspace/TravelAPI/target/scala-2.10/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/sagar/JavaWorkspace/TravelAPI/conf/routes,/Users/sagar/JavaWorkspace/TravelAPI/target/scala-2.10/classes/routes)[0m
