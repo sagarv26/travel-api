@@ -35,7 +35,7 @@ public class DistrictController extends BaseController {
 	}
 
 	public Result getAllDist() {
-
+		System.out.println("Calling Controller");
 		DistrictDAO distDAO = new DistrictDAO();
 		Map<String, Object> hashMap = new HashMap<>();
 		List<District> distList = distDAO.getAllDistrict();
