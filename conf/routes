@@ -8,9 +8,8 @@ GET     /                           controllers.Application.index()
 GET     /district            	     @controllers.DistrictController.getAllDistrict()
 GET     /district/allOrder           @controllers.DistrictController.getAllDistrictsOrder()
 
-GET       /districts        	     @controllers.DistrictController.getAllDistrict()
+GET       /districts        	     @controllers.GetValue.getAllDist()
 
-GET       /dist       	             @controllers.DistrictController.getAllDist()
 
 #GET     /place/all             		@controllers.GetValue.getAllPlaces()
 #GET     /place/allOrder             @controllers.GetValue.getAllPlacesOrder()

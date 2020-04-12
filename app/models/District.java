@@ -1,4 +1,3 @@
-    
 package models;
 
 import javax.persistence.Column;
@@ -27,20 +26,19 @@ public class District extends Model {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @Column(name = "id_dist")
-    public Long id_dist;
+	@Column(name = "id_dist")
+	public Long id_dist;
 
-    @Column(name = "district_name")
-    public String district_name;
-    
-    @Column(name = "dist_info")
-    public String dist_info;
-    
-    public District(SqlRow district)
-    {
-    	this.id_dist = district.getLong("id_dist");
-        this.district_name = district.getString("district_name");
-        this.dist_info = district.getString("dist_info");
-    }
+	@Column(name = "district_name")
+	public String district_name;
+
+	@Column(name = "dist_info")
+	public String dist_info;
+
+	public District(SqlRow district) {
+		this.id_dist = district.getLong("id_dist");
+		this.district_name = district.getString("district_name");
+		this.dist_info = district.getString("dist_info");
+	}
 
 }

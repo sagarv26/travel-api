@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.google.inject.Inject;
 
-import dao.DistrictDAO;
 import models.District;
 import play.libs.F;
 import play.libs.Json;
@@ -32,15 +31,6 @@ public class DistrictController extends BaseController {
 			hashMap.put("District", district);
 			return ok(Json.toJson(hashMap));
 		});
-	}
-
-	public Result getAllDist() {
-		System.out.println("Calling Controller");
-		DistrictDAO distDAO = new DistrictDAO();
-		Map<String, Object> hashMap = new HashMap<>();
-		List<District> distList = distDAO.getAllDistrict();
-		hashMap.put("District", distList);
-		return ok(Json.toJson(hashMap));
 	}
 
 	public Result getAllDistrictsOrder() {
