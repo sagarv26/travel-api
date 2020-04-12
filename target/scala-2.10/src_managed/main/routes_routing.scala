@@ -1,6 +1,6 @@
 // @SOURCE:/Users/sagar/JavaWorkspace/TravelAPI/conf/routes
-// @HASH:8b52e461c0a385a3ad6da616652da950e82be7c6
-// @DATE:Sun Apr 12 16:40:34 IST 2020
+// @HASH:926a2854b75e2d0ae938ca31a6ccc3a00b168b8a
+// @DATE:Sun Apr 12 17:11:58 IST 2020
 
 
 import play.core._
@@ -41,17 +41,13 @@ private[this] lazy val controllers_DistrictController_getAllDistrictsOrder2 = Ro
         
 
 // @LINE:11
-private[this] lazy val controllers_DistrictController_getAllDistrict3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("districts"))))
+private[this] lazy val controllers_GetValue_getAllDist3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("districts"))))
         
 
-// @LINE:13
-private[this] lazy val controllers_DistrictController_getAllDist4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("dist"))))
+// @LINE:30
+private[this] lazy val controllers_Assets_at4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
         
-
-// @LINE:31
-private[this] lazy val controllers_Assets_at5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
-        
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """district""","""@controllers.DistrictController@.getAllDistrict()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """district/allOrder""","""@controllers.DistrictController@.getAllDistrictsOrder()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """districts""","""@controllers.DistrictController@.getAllDistrict()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """dist""","""@controllers.DistrictController@.getAllDist()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """district""","""@controllers.DistrictController@.getAllDistrict()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """district/allOrder""","""@controllers.DistrictController@.getAllDistrictsOrder()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """districts""","""@controllers.GetValue@.getAllDist()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -84,23 +80,15 @@ case controllers_DistrictController_getAllDistrictsOrder2(params) => {
         
 
 // @LINE:11
-case controllers_DistrictController_getAllDistrict3(params) => {
+case controllers_GetValue_getAllDist3(params) => {
    call { 
-        invokeHandler(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.DistrictController]).getAllDistrict(), HandlerDef(this, "controllers.DistrictController", "getAllDistrict", Nil,"GET", """""", Routes.prefix + """districts"""))
+        invokeHandler(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.GetValue]).getAllDist(), HandlerDef(this, "controllers.GetValue", "getAllDist", Nil,"GET", """""", Routes.prefix + """districts"""))
    }
 }
         
 
-// @LINE:13
-case controllers_DistrictController_getAllDist4(params) => {
-   call { 
-        invokeHandler(play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.DistrictController]).getAllDist(), HandlerDef(this, "controllers.DistrictController", "getAllDist", Nil,"GET", """""", Routes.prefix + """dist"""))
-   }
-}
-        
-
-// @LINE:31
-case controllers_Assets_at5(params) => {
+// @LINE:30
+case controllers_Assets_at4(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

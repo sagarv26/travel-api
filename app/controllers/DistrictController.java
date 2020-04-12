@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.inject.Inject;
-
 import models.District;
 import play.libs.F;
 import play.libs.Json;
@@ -14,17 +12,29 @@ import services.DistrictService;
 
 public class DistrictController extends BaseController {
 
-	private final DistrictService districtService;
+//	private DistrictService districtService;
 
-	@Inject
-	public DistrictController(DistrictService districtService) {
-		super();
-		this.districtService = districtService;
-	}
+//	@Inject
+//	public DistrictController(DistrictService districtService) {
+//		super();
+//		this.districtService = districtService;
+//	}
 
-	public F.Promise<Result> getAllDistrict() {
+//	public F.Promise<Result> getAllDistrict() {
+//		System.out.println("Calling Controller");
+//
+//		return F.Promise.promise(() -> {
+//			Map<String, Object> hashMap = new HashMap<>();
+//			List<District> district = districtService.getAllDistrict();
+//			hashMap.put("District", district);
+//			return ok(Json.toJson(hashMap));
+//		});
+//	}
+
+	public F.Promise<Result> getAllDistricts() {
 		System.out.println("Calling Controller");
-
+		DistrictService districtService = null; 
+		
 		return F.Promise.promise(() -> {
 			Map<String, Object> hashMap = new HashMap<>();
 			List<District> district = districtService.getAllDistrict();
@@ -33,10 +43,10 @@ public class DistrictController extends BaseController {
 		});
 	}
 
-	public Result getAllDistrictsOrder() {
-		Map<String, Object> hashMap = new HashMap<>();
-		List<District> district = districtService.getAllDistrictsOrder();
-		hashMap.put("District", district);
-		return ok(Json.toJson(hashMap));
-	}
+//	public Result getAllDistrictsOrder() {
+//		Map<String, Object> hashMap = new HashMap<>();
+//		List<District> district = districtService.getAllDistrictsOrder();
+//		hashMap.put("District", district);
+//		return ok(Json.toJson(hashMap));
+//	}
 }
