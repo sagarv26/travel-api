@@ -34,7 +34,7 @@ public class DistrictController extends BaseController {
 		});
 	}
 
-	public Result getAllDistricts() {
+	public Result getAllDist() {
 
 		DistrictDAO distDAO = new DistrictDAO();
 		Map<String, Object> hashMap = new HashMap<>();
