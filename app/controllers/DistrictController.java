@@ -18,7 +18,6 @@ public class DistrictController extends BaseController {
 
 	@Inject
 	public DistrictController(DistrictService districtService) {
-		super();
 		this.districtService = districtService;
 	}
 
