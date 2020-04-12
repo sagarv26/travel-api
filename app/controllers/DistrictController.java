@@ -18,7 +18,7 @@ public class DistrictController extends BaseController{
 		this.districtService = districtService;
 	}
 	
-	public Result getAllDistricts() {
+	public Result getAllDistrict() {
 		System.out.println("Calling Controller");
         Map<String, Object> hashMap = new HashMap<>();
         List<District> district = districtService.getAllDistrict();

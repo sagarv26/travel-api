@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/tripapi -Dhttp.port=${PORT} -jvm-debug "8021"
