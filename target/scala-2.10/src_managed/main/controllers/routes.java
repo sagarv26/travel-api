@@ -1,6 +1,6 @@
 // @SOURCE:/Users/sagar/JavaWorkspace/TravelAPI/conf/routes
-// @HASH:518ce2080a954410d17a8654033b0a82a56216da
-// @DATE:Sun Apr 12 15:25:14 IST 2020
+// @HASH:8b52e461c0a385a3ad6da616652da950e82be7c6
+// @DATE:Sun Apr 12 16:40:34 IST 2020
 
 package controllers;
 

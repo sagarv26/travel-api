@@ -1,6 +1,6 @@
 // @SOURCE:/Users/sagar/JavaWorkspace/TravelAPI/conf/routes
-// @HASH:518ce2080a954410d17a8654033b0a82a56216da
-// @DATE:Sun Apr 12 15:25:14 IST 2020
+// @HASH:8b52e461c0a385a3ad6da616652da950e82be7c6
+// @DATE:Sun Apr 12 16:40:34 IST 2020
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,17 +13,19 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:27
+// @LINE:31
+// @LINE:13
+// @LINE:11
 // @LINE:9
 // @LINE:8
 // @LINE:6
 package controllers {
 
-// @LINE:27
+// @LINE:31
 class ReverseAssets {
     
 
-// @LINE:27
+// @LINE:31
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -32,10 +34,18 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:13
+// @LINE:11
 // @LINE:9
 // @LINE:8
 class ReverseDistrictController {
     
+
+// @LINE:13
+def getAllDist(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "dist")
+}
+                                                
 
 // @LINE:9
 def getAllDistrictsOrder(): Call = {
@@ -43,9 +53,17 @@ def getAllDistrictsOrder(): Call = {
 }
                                                 
 
+// @LINE:11
 // @LINE:8
 def getAllDistrict(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "district")
+   () match {
+// @LINE:8
+case () if true => Call("GET", _prefix + { _defaultPrefix } + "district")
+                                                        
+// @LINE:11
+case () if true => Call("GET", _prefix + { _defaultPrefix } + "districts")
+                                                        
+   }
 }
                                                 
     
@@ -68,17 +86,19 @@ def index(): Call = {
                   
 
 
-// @LINE:27
+// @LINE:31
+// @LINE:13
+// @LINE:11
 // @LINE:9
 // @LINE:8
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:27
+// @LINE:31
 class ReverseAssets {
     
 
-// @LINE:27
+// @LINE:31
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -92,10 +112,23 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:13
+// @LINE:11
 // @LINE:9
 // @LINE:8
 class ReverseDistrictController {
     
+
+// @LINE:13
+def getAllDist : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.DistrictController.getAllDist",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "dist"})
+      }
+   """
+)
+                        
 
 // @LINE:9
 def getAllDistrictsOrder : JavascriptReverseRoute = JavascriptReverseRoute(
@@ -108,12 +141,18 @@ def getAllDistrictsOrder : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:11
 // @LINE:8
 def getAllDistrict : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.DistrictController.getAllDistrict",
    """
       function() {
+      if (true) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "district"})
+      }
+      if (true) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "districts"})
+      }
       }
    """
 )
@@ -143,18 +182,20 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:27
+// @LINE:31
+// @LINE:13
+// @LINE:11
 // @LINE:9
 // @LINE:8
 // @LINE:6
 package controllers.ref {
 
 
-// @LINE:27
+// @LINE:31
 class ReverseAssets {
     
 
-// @LINE:27
+// @LINE:31
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -163,10 +204,18 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:13
+// @LINE:11
 // @LINE:9
 // @LINE:8
 class ReverseDistrictController {
     
+
+// @LINE:13
+def getAllDist(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[controllers.DistrictController]).getAllDist(), HandlerDef(this, "controllers.DistrictController", "getAllDist", Seq(), "GET", """""", _prefix + """dist""")
+)
+                      
 
 // @LINE:9
 def getAllDistrictsOrder(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
