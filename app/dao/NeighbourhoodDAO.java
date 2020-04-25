@@ -25,7 +25,9 @@ public class NeighbourhoodDAO extends BaseDao {
 					+ "on place_list.id_place = n.neighbourhoodsID";
 			SqlQuery query = db.createSqlQuery(sql);
 			List<SqlRow> list = query.findList();
+			System.out.println(list);
 			placeList = Utils.convertObjectList(list, Neighbourhood.class);
+			System.out.println(placeList);
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
