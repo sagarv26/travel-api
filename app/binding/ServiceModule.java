@@ -4,8 +4,10 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
 
 import services.DistrictService;
+import services.NeighbourhoodService;
 import services.PlaceService;
 import services.impl.DistrictServiceImpl;
+import services.impl.NeighbourhoodServiceImpl;
 import services.impl.PlaceServiceImpl;
 
 /**
@@ -15,5 +17,6 @@ public class ServiceModule extends AbstractModule {
 	protected void configure() {
 		bind(DistrictService.class).to(DistrictServiceImpl.class).in(Scopes.SINGLETON);
 		bind(PlaceService.class).to(PlaceServiceImpl.class).in(Scopes.SINGLETON);
+		bind(NeighbourhoodService.class).to(NeighbourhoodServiceImpl.class).in(Scopes.SINGLETON);
 	}
 }

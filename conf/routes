@@ -13,7 +13,7 @@ GET       /districts        	     @controllers.GetValue.getAllDist()
 GET     /place/all             		@controllers.PlaceController.getAllPlace()
 GET     /place/allOrder             @controllers.PlaceController.getAllPlaceOrder()
 
-GET     /Neighbourhood             @controllers.NeighbourhoodController.getNeighbourhood()
+GET     /neighbourhood             @controllers.NeighbourhoodController.getNeighbourhood()
 
 #GET     /placeValues/all            @controllers.GetValue.getAllPlaceValues()
 
