@@ -22,8 +22,6 @@ public class DistrictController extends BaseController {
 	}
 
 	public F.Promise<Result> getAllDistrict() {
-		System.out.println("Calling Controller");
-
 		return F.Promise.promise(() -> {
 			Map<String, Object> hashMap = new HashMap<>();
 			List<District> district = districtService.getAllDistrict();
