@@ -21,7 +21,7 @@ public class PlaceController extends BaseController {
 		this.placeService = placeService;
 	}
 
-	public F.Promise<Result> getAllDistrict() {
+	public F.Promise<Result> getAllPlace() {
 		return F.Promise.promise(() -> {
 			Map<String, Object> hashMap = new HashMap<>();
 			List<Places> place = placeService.getAllPlace();
