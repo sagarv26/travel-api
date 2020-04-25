@@ -6,10 +6,10 @@ public class Neighbourhood extends Model {
 
 	private static final long serialVersionUID = 1L;
 
-	public Long ID;
+	public Long id;
 
-	public String Place;
+	public String place;
 
-	public String Neighbourhoods;
+	public String neighbourhoods;
 
 }
