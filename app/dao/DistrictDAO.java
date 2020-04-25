@@ -22,13 +22,10 @@ public class DistrictDAO extends BaseDao {
 		List<District> districtList = new ArrayList<>();
 
 		try {
-//			districtList = db.find(District.class).findList();
-
 			String sql = "select * from district";
 			SqlQuery query = db.createSqlQuery(sql);
 			List<SqlRow> distList = query.findList();
 			districtList = Utils.convertObjectList(distList, District.class);
-
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
