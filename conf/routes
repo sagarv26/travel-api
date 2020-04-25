@@ -11,7 +11,7 @@ GET     /district/allOrder           @controllers.DistrictController.getAllDistr
 GET       /districts        	     @controllers.GetValue.getAllDist()
 
 
-#ET     /place/all             		@controllers.PlaceController.getAllPlace()
+GET     /place/all             		@controllers.PlaceController.getAllPlace()
 GET     /place/allOrder             @controllers.PlaceController.getAllPlaceOrder()
 
 #GET     /placeValues/all            @controllers.GetValue.getAllPlaceValues()
