@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/TravelAPI -Dhttp.port=${PORT} -jvm-debug "8021"
+web: target/universal/stage/bin/travelapi -Dhttp.port=${PORT} -jvm-debug "8021"
