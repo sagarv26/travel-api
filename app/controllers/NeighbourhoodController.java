@@ -40,4 +40,11 @@ public class NeighbourhoodController extends BaseController {
 		});
 	}
 
+	public F.Promise<Result> getDetails() {
+		return F.Promise.promise(() -> {
+			Map<String, Object> hashMap = neighbourhoodService.getDetails();
+			return ok(Json.toJson(hashMap));
+		});
+	}
+
 }

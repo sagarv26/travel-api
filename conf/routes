@@ -19,6 +19,8 @@ GET     /neighbourhood             @controllers.NeighbourhoodController.getNeigh
 
 GET     /neighbourhoodWithDist          @controllers.NeighbourhoodController.getNeighbourhoodWithDist()
 
+GET     /Details          @controllers.NeighbourhoodController.getDetails()
+
 #GET		/out						@controllers.GetValue.getOut()
 
 #GET		/place						@controllers.GetValue.getPlace()

@@ -28,4 +28,9 @@ public class NeighbourhoodServiceImpl implements NeighbourhoodService {
 		return neighbourhoodDao.getNeighbourhoodWithDist();
 	}
 
+	@Override
+	public Map<String, Object> getDetails() {
+		return neighbourhoodDao.getDetails();
+	}
+
 }

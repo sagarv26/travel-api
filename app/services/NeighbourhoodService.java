@@ -11,4 +11,6 @@ public interface NeighbourhoodService {
 
 	Map<String, Object> getNeighbourhoodWithDist();
 
+	Map<String, Object> getDetails();
+
 }
