@@ -35,14 +35,14 @@ public class District extends Model {
 	@Column(name = "dist_info")
 	public String dist_info;
 
-	@Column(name = "image")
+	@Column(name = "dist_image")
 	public String dist_image;
 
 	public District(SqlRow district) {
 		this.id_dist = district.getLong("id_dist");
 		this.district_name = district.getString("district_name");
 		this.dist_info = district.getString("dist_info");
-		this.dist_image = district.getString("image");
+		this.dist_image = district.getString("dist_image");
 	}
 
 }
