@@ -24,8 +24,18 @@ public class NeighbourhoodController extends BaseController {
 	public F.Promise<Result> getNeighbourhood() {
 		return F.Promise.promise(() -> {
 			Map<String, Object> hashMap = new HashMap<>();
-			List<Neighbourhood> district = neighbourhoodService.getNeighbourhood();
-			hashMap.put("Neighbourhood", district);
+			List<Neighbourhood> place = neighbourhoodService.getNeighbourhood();
+			for (Neighbourhood s : place) {
+				System.out.println(s.getPlace() + " " + s.getNeighbourhoods() + " " + s.getId());
+			}
+			hashMap.put("Neighbourhood", place);
+			return ok(Json.toJson(hashMap));
+		});
+	}
+
+	public F.Promise<Result> getNeighbourhoodWithDist() {
+		return F.Promise.promise(() -> {
+			Map<String, Object> hashMap = neighbourhoodService.getNeighbourhoodWithDist();
 			return ok(Json.toJson(hashMap));
 		});
 	}

@@ -38,4 +38,24 @@ public class DistrictDAO extends BaseDao {
 		Collections.sort(districtList, new DistrictComparator());
 		return districtList;
 	}
+
+	public District getDistrictById(String id) {
+		District dist = null;
+		try {
+			dist = db.find(District.class).where().eq("id_dist", id).findUnique();
+		} catch (Exception ex) {
+
+		}
+		return dist;
+	}
+
+	public District getDistrictByName(String name) {
+		District dist = null;
+		try {
+			dist = db.find(District.class).where().eq("district_name", name).findUnique();
+		} catch (Exception ex) {
+
+		}
+		return dist;
+	}
 }

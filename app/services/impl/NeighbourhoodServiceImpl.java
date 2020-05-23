@@ -1,6 +1,7 @@
 package services.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.google.inject.Inject;
 
@@ -19,8 +20,12 @@ public class NeighbourhoodServiceImpl implements NeighbourhoodService {
 
 	@Override
 	public List<Neighbourhood> getNeighbourhood() {
-
 		return neighbourhoodDao.getNeighbourhood();
+	}
+
+	@Override
+	public Map<String, Object> getNeighbourhoodWithDist() {
+		return neighbourhoodDao.getNeighbourhoodWithDist();
 	}
 
 }

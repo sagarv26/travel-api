@@ -7,6 +7,8 @@ GET     /                           controllers.Application.index()
 
 GET     /district            	     @controllers.DistrictController.getAllDistrict()
 GET     /district/allOrder           @controllers.DistrictController.getAllDistrictsOrder()
+GET     /district/id/:id             @controllers.DistrictController.getDistrictById(id : String)
+GET     /district/name/:name         @controllers.DistrictController.getDistrictByName(name : String)
 
 GET       /districts        	     @controllers.GetValue.getAllDist()
 
@@ -15,7 +17,7 @@ GET     /place/allOrder             @controllers.PlaceController.getAllPlaceOrde
 
 GET     /neighbourhood             @controllers.NeighbourhoodController.getNeighbourhood()
 
-#GET     /placeValues/all            @controllers.GetValue.getAllPlaceValues()
+GET     /neighbourhoodWithDist          @controllers.NeighbourhoodController.getNeighbourhoodWithDist()
 
 #GET		/out						@controllers.GetValue.getOut()
 

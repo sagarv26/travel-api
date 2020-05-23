@@ -8,8 +8,8 @@ import dao.DistrictDAO;
 import models.District;
 import services.DistrictService;
 
-public class DistrictServiceImpl implements DistrictService{
-	
+public class DistrictServiceImpl implements DistrictService {
+
 	private final DistrictDAO districtDao;
 
 	@Inject
@@ -19,14 +19,24 @@ public class DistrictServiceImpl implements DistrictService{
 
 	@Override
 	public List<District> getAllDistrict() {
-		
+
 		return districtDao.getAllDistrict();
 	}
 
 	@Override
 	public List<District> getAllDistrictsOrder() {
-		
+
 		return districtDao.getAllDistrictsOrder();
+	}
+
+	@Override
+	public District getDistrictByName(String name) {
+		return districtDao.getDistrictByName(name);
+	}
+
+	@Override
+	public District getDistrictById(String id) {
+		return districtDao.getDistrictById(id);
 	}
 
 }
