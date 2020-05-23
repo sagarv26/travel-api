@@ -37,7 +37,7 @@ public class DistrictController extends BaseController {
 		return ok(Json.toJson(hashMap));
 	}
 
-	public F.Promise<Result> getDistrictById(String id) {
+	public F.Promise<Result> getDistrictById(Long id) {
 		return F.Promise.promise(() -> {
 			District dist = districtService.getDistrictById(id);
 			return ok(Json.toJson(dist));

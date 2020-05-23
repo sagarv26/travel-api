@@ -12,6 +12,6 @@ public interface DistrictService {
 
 	District getDistrictByName(String name);
 
-	District getDistrictById(String id);
+	District getDistrictById(Long id);
 
 }

@@ -39,7 +39,7 @@ public class DistrictDAO extends BaseDao {
 		return districtList;
 	}
 
-	public District getDistrictById(String id) {
+	public District getDistrictById(Long id) {
 		District dist = null;
 		try {
 			dist = db.find(District.class).where().eq("id_dist", id).findUnique();

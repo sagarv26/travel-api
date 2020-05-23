@@ -7,7 +7,7 @@ GET     /                           controllers.Application.index()
 
 GET     /district            	     @controllers.DistrictController.getAllDistrict()
 GET     /district/allOrder           @controllers.DistrictController.getAllDistrictsOrder()
-GET     /district/id/:id             @controllers.DistrictController.getDistrictById(id : String)
+GET     /district/id/:id             @controllers.DistrictController.getDistrictById(id : Long)
 GET     /district/name/:name         @controllers.DistrictController.getDistrictByName(name : String)
 
 GET       /districts        	     @controllers.GetValue.getAllDist()

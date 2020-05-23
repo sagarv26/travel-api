@@ -35,7 +35,7 @@ public class DistrictServiceImpl implements DistrictService {
 	}
 
 	@Override
-	public District getDistrictById(String id) {
+	public District getDistrictById(Long id) {
 		return districtDao.getDistrictById(id);
 	}
 
