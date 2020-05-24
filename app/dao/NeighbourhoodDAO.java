@@ -11,6 +11,7 @@ import com.google.inject.Inject;
 
 import models.District;
 import models.Neighbourhood;
+import models.PlaceValues;
 import models.Places;
 import utils.Utils;
 
@@ -94,6 +95,12 @@ public class NeighbourhoodDAO extends BaseDao {
 					Map<String, Object> place_map = new HashMap<>();
 					if (district.id_dist == place.id_dist) {
 						place_map.put("place_info", place);
+					}
+					List<PlaceValues> valueList = db.find(PlaceValues.class).findList();
+					for (PlaceValues value : valueList) {
+						if (place.id_place == value.id_place) {
+							place_map.put("values", value);
+						}
 					}
 					String sql = "SELECT ID, Place, place_name \"Neighbourhoods\" from place_list INNER JOIN (SELECT  place_list.id_place \"ID\", place_list.place_name as \"Place\", neighbourhoods.id_neighbourhood \"neighbourhoodsID\" FROM place_list INNER JOIN neighbourhoods ON place_list.id_place = neighbourhoods.id_place) n \n"
 							+ "on place_list.id_place = n.neighbourhoodsID";
