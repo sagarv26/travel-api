@@ -25,13 +25,13 @@ public class PlaceValues extends Model {
 	@Column(name = "place_image")
 	public String place_image;
 
-	@Column(name = "place_info")
-	public String place_info;
+	@Column(name = "place_desc")
+	public String place_desc;
 
 	public PlaceValues(SqlRow placeInfo) {
 		this.id_place = placeInfo.getLong("id_place");
 		this.best_season = placeInfo.getString("best_season");
-		this.place_info = placeInfo.getString("place_info");
+		this.place_desc = placeInfo.getString("place_desc");
 		this.place_image = placeInfo.getString("place_image");
 	}
 }
