@@ -38,8 +38,12 @@ public class District extends Model {
 	@Column(name = "dist_image")
 	public String dist_image;
 
+	@Column(name = "id_state")
+	public Long id_state;
+
 	public District(SqlRow district) {
 		this.id_dist = district.getLong("id_dist");
+		this.id_state = district.getLong("id_state");
 		this.district_name = district.getString("district_name");
 		this.dist_info = district.getString("dist_info");
 		this.dist_image = district.getString("dist_image");
