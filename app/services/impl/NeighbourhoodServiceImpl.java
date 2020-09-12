@@ -33,4 +33,8 @@ public class NeighbourhoodServiceImpl implements NeighbourhoodService {
 		return neighbourhoodDao.getDetails();
 	}
 
+	@Override
+	public Map<String, Object> getStateValue() {
+		return neighbourhoodDao.getStateValue();
+	}
 }

@@ -47,4 +47,11 @@ public class NeighbourhoodController extends BaseController {
 		});
 	}
 
+	public F.Promise<Result> getStateValue() {
+		return F.Promise.promise(() -> {
+			Map<String, Object> hashMap = neighbourhoodService.getStateValue();
+			return ok(Json.toJson(hashMap));
+		});
+	}
+
 }

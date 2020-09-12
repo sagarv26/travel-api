@@ -13,4 +13,6 @@ public interface NeighbourhoodService {
 
 	Map<String, Object> getDetails();
 
+	Map<String, Object> getStateValue();
+
 }
