@@ -152,12 +152,12 @@ public class NeighbourhoodDAO extends BaseDao {
 					List<Places> placeList = db.find(Places.class).where().eq("id_dist", district.id_dist).findList();
 					for (Places place : placeList) {
 						Map<String, Object> place_map = new HashMap<>();
-						if (district.id_dist == place.id_dist) {
+						if (district.id_dist.equals(place.id_dist)) {
 							place_map.put("place_info", place);
 						}
 						List<PlaceValues> valueList = db.find(PlaceValues.class).findList();
 						for (PlaceValues value : valueList) {
-							if (place.id_place == value.id_place) {
+							if (place.id_place.equals(value.id_place)) {
 								place_map.put("values", value);
 							}
 						}
@@ -169,7 +169,7 @@ public class NeighbourhoodDAO extends BaseDao {
 						neighbour = Utils.convertObjectList(list, Neighbourhood.class);
 						List<String> neighbourList = new ArrayList<>();
 						for (Neighbourhood value : neighbour) {
-							if (place.id_place == value.getId()) {
+							if (place.id_place.equals(value.getId())) {
 								// place_map.put("values", value);
 								neighbourList.add(value.getNeighbourhoods());
 							}
