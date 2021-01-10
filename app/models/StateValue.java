@@ -41,8 +41,8 @@ public class StateValue extends Model {
 	@Column(name = "dist_map")
 	public String dist_map;
 
-	@Column(name = "blank_map")
-	public String blank_map;
+	@Column(name = "official_info")
+	public String official_info;
 
 	@Column(name = "state_slogan")
 	public String state_slogan;
@@ -65,7 +65,7 @@ public class StateValue extends Model {
 		this.state_info = district.getString("state_info");
 		this.state_image = district.getString("state_image");
 		this.dist_map = district.getString("dist_map");
-		this.blank_map = district.getString("blank_map");
+		this.official_info = district.getString("official_info");
 		this.state_slogan = district.getString("state_slogan");
 		this.state_dance = district.getString("state_dance");
 		this.state_dance_icon = district.getString("state_dance_icon");
